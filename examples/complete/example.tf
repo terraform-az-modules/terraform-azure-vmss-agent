@@ -62,7 +62,7 @@ module "vmss-agent" {
   vms_size             = "Standard_E2s_v3"
   label_order          = ["name", "environment", "location"]
   subnet_id            = module.subnet.subnet_ids["subnet1"]
-  ssh_public_key       = "ssh-AAAA"
+  ssh_public_key       = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPOBVSTlnWYQzs6qGRPoP17MdXPTj2W6dSvTIx4+02wp vedant.kalia@clouddrove.com"
   source_image_reference = {
     publisher = "Canonical"
     offer     = "0001-com-ubuntu-server-jammy"

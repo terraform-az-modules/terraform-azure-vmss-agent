@@ -375,7 +375,7 @@ variable "identity" {
 
 variable "encryption_at_host_enabled" {
   type        = bool
-  default     = false
+  default     = true
   description = "Enable encryption at the host level."
 }
 
