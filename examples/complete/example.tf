@@ -1,6 +1,5 @@
 provider "azurerm" {
   features {}
-  subscription_id = ""
 }
 
 ##-----------------------------------------------------------------------------
@@ -69,8 +68,8 @@ module "vmss-agent" {
     offer     = "0001-com-ubuntu-server-jammy"
     sku       = "22_04-lts"
     version   = "latest"
-    custom_data = base64encode(<<EOF
-ustom_data = base64encode(<<EOF
+  }
+  custom_data = base64encode(<<EOF
 #cloud-config
 packages:
   - curl
@@ -97,6 +96,5 @@ runcmd:
   # Install kubectl (latest stable version)
   - curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 EOF
-    )
-  }
+  )
 }
