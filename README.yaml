@@ -38,7 +38,8 @@ providers:
 
 #  description of this project
 description: |-
-  Terraform Azure Module Template to create new modules using this as baseline
+  Terraform module to deploy a Linux Virtual Machine Scale Set (VMSS) in Azure.
+  This module supports user-defined images and uses cloud-init to install tools like Docker, Terraform, Helm, kubectl, and Azure CLI.
 
 # How to use this project
 usage: |-
