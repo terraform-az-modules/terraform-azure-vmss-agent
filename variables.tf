@@ -25,7 +25,7 @@ EOT
 ##-----------------------------------------------------------------------------
 variable "name" {
   type        = string
-  default     = null
+  default     = "core"
   description = "Name (e.g. `app` or `cluster`)."
 }
 
@@ -37,7 +37,7 @@ variable "location" {
 
 variable "environment" {
   type        = string
-  default     = null
+  default     = "dev"
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
@@ -98,7 +98,7 @@ variable "instances_count" {
 
 variable "computer_name_prefix" {
   type        = string
-  default     = null
+  default     = "vmss-agent"
   description = "The prefix for the computer name of the virtual machines in the scale set."
 }
 
@@ -122,7 +122,7 @@ variable "proximity_placement_group_id" {
 
 variable "admin_username" {
   type        = string
-  default     = null
+  default     = "ubuntu"
   description = "The administrator username for the virtual machines."
 }
 
@@ -158,7 +158,12 @@ variable "source_image_reference" {
     sku       = string
     version   = string
   })
-  default     = null
+  default = {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
+  }
   description = "Specifies the gallery image to use. Used if source_image_id is null."
 }
 

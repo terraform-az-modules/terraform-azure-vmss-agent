@@ -1,7 +1,6 @@
 <!-- BEGIN_TF_DOCS -->
 
-# Terraform Azure VMSS Agent Example
-
+# Terraform Azure VMSS Agent
 This directory contains an example usage of the **terraform-azure-vmss-agent** module. It provisions a Virtual Machine Scale Set (VMSS) in Azure and installs common DevOps tools using cloud-init.
 
 ---

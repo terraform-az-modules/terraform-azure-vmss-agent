@@ -55,20 +55,10 @@ module "vmss-agent" {
   source               = "../../"
   resource_group_name  = module.resource_group.resource_group_name
   location             = module.resource_group.resource_group_location
-  admin_username       = "ubuntu"
-  computer_name_prefix = "vmss-agent"
   name                 = "core"
   environment          = "dev"
-  vms_size             = "Standard_E2s_v3"
-  label_order          = ["name", "environment", "location"]
   subnet_id            = module.subnet.subnet_ids["subnet1"]
   ssh_public_key       = "ssh-AAA"
-  source_image_reference = {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
-    version   = "latest"
-  }
   custom_data = base64encode(<<EOF
 #cloud-config
 packages:
