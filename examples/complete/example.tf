@@ -52,13 +52,13 @@ module "subnet" {
 # VMSS Agent
 # ------------------------------------------------------------------------------
 module "vmss-agent" {
-  source               = "../../"
-  resource_group_name  = module.resource_group.resource_group_name
-  location             = module.resource_group.resource_group_location
-  name                 = "core"
-  environment          = "dev"
-  subnet_id            = module.subnet.subnet_ids["subnet1"]
-  ssh_public_key       = "ssh-AAA"
+  source              = "../../"
+  resource_group_name = module.resource_group.resource_group_name
+  location            = module.resource_group.resource_group_location
+  name                = "core"
+  environment         = "dev"
+  subnet_id           = module.subnet.subnet_ids["subnet1"]
+  ssh_public_key      = "ssh-AAA"
   custom_data = base64encode(<<EOF
 #cloud-config
 packages:
